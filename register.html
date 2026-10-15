@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — Food Bridge</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="d-flex flex-column min-vh-100" style="background-color: var(--color-bg-light);">
+
+  <!-- Navbar -->
+  <nav class="navbar public-navbar py-2 border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon-wrapper" style="width: 36px; height: 36px; font-size: 1.1rem;"><i class="bi bi-tree-fill"></i></div>
+        <div class="brand-title">
+          <span class="main-text fw-bold">Food Bridge</span>
+          <span class="sub-text">Food Donation Platform</span>
+        </div>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-sm btn-ghost p-1 px-2 theme-toggle-btn" onclick="EcoTheme.toggle()" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button class="btn btn-sm btn-ghost p-1 px-2 lang-toggle-btn" onclick="EcoLang.set(EcoLang.get() === 'ar' ? 'en' : 'ar')" title="Switch Language" aria-label="Switch Language">
+          <i class="bi bi-translate me-1"></i> <span class="current-lang-text">العربية</span>
+        </button>
+        <a href="login.html" class="btn btn-sm btn-ghost">Already registered? Log In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Register Form Container -->
+  <main class="flex-grow-1 py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+          <div class="eco-card p-4 p-md-5 bg-white shadow-md">
+            <div class="text-center mb-4">
+              <h2 class="fw-bold mb-1">Create an Account</h2>
+              <p class="text-secondary small">Join our network to donate surplus food or collect meals for your community.</p>
+            </div>
+
+            <form id="registerForm" novalidate>
+              <!-- Role Selector -->
+              <div class="mb-4">
+                <label class="form-label d-block text-center mb-3">Select Your Account Type</label>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label class="d-flex align-items-center gap-3 p-3 border rounded-3 cursor-pointer w-100" style="cursor: pointer;">
+                      <input type="radio" name="registrationRole" value="donor" class="form-check-input mt-0" checked>
+                      <div>
+                        <div class="fw-bold text-dark"><i class="bi bi-shop text-success me-1"></i> Food Donor</div>
+                        <div class="text-muted small">Restaurant, grocery, bakery, farm, or corporate kitchen</div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="d-flex align-items-center gap-3 p-3 border rounded-3 cursor-pointer w-100" style="cursor: pointer;">
+                      <input type="radio" name="registrationRole" value="charity" class="form-check-input mt-0">
+                      <div>
+                        <div class="fw-bold text-dark"><i class="bi bi-heart-pulse text-info me-1"></i> Charitable Organization</div>
+                        <div class="text-muted small">Food bank, soup kitchen, shelter, or community pantry</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Shared Credentials -->
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="regEmail" class="form-label">Work / Contact Email <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="regEmail" placeholder="contact@organization.org" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="regPhone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="regPhone" placeholder="+1 (555) 000-0000" required>
+                </div>
+              </div>
+
+              <!-- Conditional Fields: DONOR -->
+              <div id="donorFieldsContainer">
+                <div class="row g-3 mb-3">
+                  <div class="col-md-8">
+                    <label for="donorFullName" class="form-label">Business / Donor Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="donorFullName" placeholder="e.g. GreenBites Bistro or John Doe">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="donorType" class="form-label">Donor Category</label>
+                    <select class="form-select" id="donorType">
+                      <option value="Restaurant">Restaurant</option>
+                      <option value="Supermarket">Supermarket</option>
+                      <option value="Bakery">Bakery / Café</option>
+                      <option value="Farm">Farm / Producer</option>
+                      <option value="Catering">Event Catering</option>
+                      <option value="Individual">Individual Donor</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="donorAddress" class="form-label">Primary Pickup Location / Address <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="donorAddress" placeholder="Street Address, City, Postal Code">
+                </div>
+              </div>
+
+              <!-- Conditional Fields: CHARITY -->
+              <div id="charityFieldsContainer" style="display: none;">
+                <div class="row g-3 mb-3">
+                  <div class="col-md-7">
+                    <label for="charityOrgName" class="form-label">Organization Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="charityOrgName" placeholder="e.g. Metro Hope Food Pantry">
+                  </div>
+                  <div class="col-md-5">
+                    <label for="charityType" class="form-label">Organization Type</label>
+                    <select class="form-select" id="charityType">
+                      <option value="Food Bank">Food Bank</option>
+                      <option value="Soup Kitchen">Soup Kitchen</option>
+                      <option value="Homeless Shelter">Emergency Shelter</option>
+                      <option value="Community Pantry">Community Center Pantry</option>
+                      <option value="Youth Outreach">Youth Care Center</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label for="charityContactPerson" class="form-label">Primary Contact Person</label>
+                    <input type="text" class="form-control" id="charityContactPerson" placeholder="Full name of director or coordinator">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="charityTaxId" class="form-label">Tax ID / Non-Profit Registration</label>
+                    <input type="text" class="form-control" id="charityTaxId" placeholder="e.g. 501(c)(3) #84-9201934">
+                  </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label for="charityAddress" class="form-label">Headquarters / Depot Address</label>
+                    <input type="text" class="form-control" id="charityAddress" placeholder="Street Address, City">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="charityServiceArea" class="form-label">Service Area Coverage</label>
+                    <input type="text" class="form-control" id="charityServiceArea" placeholder="e.g. Greater Metro Area, 15km Radius">
+                  </div>
+                </div>
+
+                <!-- Document Upload Dropzone -->
+                <div class="mb-3">
+                  <label class="form-label">Upload Non-Profit Verification Document (PDF / Image)</label>
+                  <div class="eco-dropzone py-3" onclick="document.getElementById('orgVerificationDoc').click();">
+                    <i class="bi bi-cloud-arrow-up text-success fs-3 mb-1 d-block"></i>
+                    <div class="fw-bold small">Click or drag registration documents here</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Accepted formats: PDF, JPG, PNG (Max 10MB)</div>
+                    <input type="file" id="orgVerificationDoc" class="d-none" accept=".pdf,image/*">
+                  </div>
+                  <div id="docUploadPreview" class="mt-2"></div>
+                </div>
+              </div>
+
+              <!-- Passwords -->
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="regPassword" class="form-label">Password <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <input type="password" class="form-control" id="regPassword" placeholder="Min. 6 characters" required>
+                    <button class="btn btn-outline-secondary password-toggle-btn" type="button"><i class="bi bi-eye"></i></button>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="regConfirmPassword" class="form-label">Confirm Password <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <input type="password" class="form-control" id="regConfirmPassword" placeholder="Re-type password" required>
+                    <button class="btn btn-outline-secondary password-toggle-btn" type="button"><i class="bi bi-eye"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="termsAgree" required checked>
+                <label class="form-check-label text-secondary small" for="termsAgree">
+                  I agree to the <a href="about.html" class="text-success text-decoration-none">Terms of Service</a>, <a href="about.html" class="text-success text-decoration-none">Food Safety Charter</a>, and <a href="about.html" class="text-success text-decoration-none">Privacy Policy</a>.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary-eco w-100 justify-content-center py-2 fs-6">
+                <i class="bi bi-check2-circle"></i> Create Account & Join Network
+              </button>
+            </form>
+
+            <div class="text-center mt-4">
+              <p class="text-secondary small mb-0">
+                Already registered? <a href="login.html" class="fw-bold text-success text-decoration-none">Log In Here</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-3 text-center text-muted small border-top bg-white">
+    <div class="container">&copy; 2026 Food Bridge. Prototype Demonstration.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

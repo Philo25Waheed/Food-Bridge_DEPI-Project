@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Operations Center — Food Bridge</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <div class="brand-icon-wrapper" style="width: 36px; height: 36px; font-size: 1.1rem;"><i class="bi bi-tree-fill"></i></div>
+          <div class="brand-title">
+            <span class="main-text fw-bold text-dark fs-5">Food Bridge</span>
+            <span class="sub-text" style="font-size: 0.65rem;">Donation Platform</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="sidebar-section-title">Administration</div>
+        <ul class="sidebar-nav">
+          <li><a href="admin-dashboard.html" class="sidebar-link active"><i class="bi bi-shield-lock"></i><span>Admin Center</span></a></li>
+          <li><a href="manage-users.html" class="sidebar-link"><i class="bi bi-people"></i><span>Manage Users</span></a></li>
+          <li><a href="manage-organizations.html" class="sidebar-link"><i class="bi bi-building-check"></i><span>Verify Charities</span></a></li>
+          <li><a href="manage-reports.html" class="sidebar-link"><i class="bi bi-flag"></i><span>Reports & Moderation</span></a></li>
+        </ul>
+
+        <div class="sidebar-section-title mt-3">Platform Views</div>
+        <ul class="sidebar-nav">
+          <li><a href="donor-dashboard.html" class="sidebar-link"><i class="bi bi-speedometer2"></i><span>Donor Hub</span></a></li>
+          <li><a href="charity-dashboard.html" class="sidebar-link"><i class="bi bi-heart-pulse"></i><span>Charity Hub</span></a></li>
+          <li><a href="explore-donations.html" class="sidebar-link"><i class="bi bi-compass"></i><span>Explore Food</span></a></li>
+        </ul>
+
+        <div class="sidebar-section-title mt-3">Account</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="notifications.html" class="sidebar-link">
+              <i class="bi bi-bell"></i>
+              <span>Notifications</span>
+              <span class="badge bg-danger rounded-pill sidebar-badge unread-notif-count" style="display: none;">0</span>
+            </a>
+          </li>
+          <li><a href="profile.html" class="sidebar-link"><i class="bi bi-gear"></i><span>Settings & Profile</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="user-mini-card">
+            <div class="user-avatar-circle" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);">
+              <i class="bi bi-shield-shaded"></i>
+            </div>
+            <div>
+              <div class="user-meta-name">Admin Director</div>
+              <div class="user-meta-role">Platform Ops</div>
+            </div>
+          </div>
+          <a href="login.html" class="btn btn-sm btn-ghost p-1"><i class="bi bi-box-arrow-right fs-5 text-secondary"></i></a>
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" aria-label="Toggle sidebar"><i class="bi bi-list"></i></button>
+          <div>
+            <h4 class="mb-0 fw-bold">Platform Operations & Compliance Center</h4>
+            <div class="text-secondary small">System health, organizational vetting queues, and metropolitan food rescue metrics.</div>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <a href="manage-organizations.html" class="btn btn-primary-eco">
+            <i class="bi bi-building-check me-1"></i> Review Verification Queue
+          </a>
+        </div>
+      </header>
+
+      <div class="dashboard-body">
+        <!-- Metric Cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-4 col-xl-2">
+            <div class="eco-card p-3 text-center">
+              <div class="stat-label mb-1">Total Users</div>
+              <div class="fw-bold fs-3 text-dark" id="adminMetricTotalUsers">287</div>
+              <div class="stat-trend up justify-content-center"><i class="bi bi-arrow-up"></i> +12%</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2">
+            <div class="eco-card p-3 text-center">
+              <div class="stat-label mb-1">Verified Orgs</div>
+              <div class="fw-bold fs-3 text-success" id="adminMetricVerifiedOrgs">44</div>
+              <div class="stat-trend up justify-content-center"><i class="bi bi-check2"></i> Vetted</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2">
+            <div class="eco-card p-3 text-center">
+              <div class="stat-label mb-1">Pending Orgs</div>
+              <div class="fw-bold fs-3 text-warning" id="adminMetricPendingOrgs">1</div>
+              <div class="stat-trend text-warning justify-content-center"><i class="bi bi-clock"></i> Review</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2">
+            <div class="eco-card p-3 text-center">
+              <div class="stat-label mb-1">Active Listings</div>
+              <div class="fw-bold fs-3 text-primary" id="adminMetricActiveListings">7</div>
+              <div class="stat-trend up justify-content-center"><i class="bi bi-broadcast"></i> Live</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2">
+            <div class="eco-card p-3 text-center">
+              <div class="stat-label mb-1">Rescued (kg)</div>
+              <div class="fw-bold fs-3 text-dark">18,450</div>
+              <div class="stat-trend up justify-content-center"><i class="bi bi-tree"></i> Total</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2">
+            <div class="eco-card p-3 text-center">
+              <div class="stat-label mb-1">Open Reports</div>
+              <div class="fw-bold fs-3 text-danger" id="adminMetricReports">1</div>
+              <div class="stat-trend text-danger justify-content-center"><i class="bi bi-flag"></i> Action</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="row g-4 mb-4">
+          <!-- Monthly Trend Bar Chart -->
+          <div class="col-lg-8">
+            <div class="eco-card p-4 h-100 bg-white">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold mb-0">Platform Donation Volume (Past 6 Months)</h5>
+                <span class="badge bg-light text-secondary border">Kilograms & Meals</span>
+              </div>
+              <div style="height: 280px; position: relative;">
+                <canvas id="adminDonationTrendsChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Distribution Doughnut -->
+          <div class="col-lg-4">
+            <div class="eco-card p-4 h-100 bg-white">
+              <h5 class="fw-bold mb-3">Category Distribution</h5>
+              <div style="height: 280px; position: relative;">
+                <canvas id="adminCategoryDistributionChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Charity Verification Queue Table -->
+        <div class="eco-card p-4 bg-white mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold mb-0">Charity Verification Approvals Queue</h5>
+              <div class="text-secondary small">Review tax-exempt documents and approve organization collection privileges.</div>
+            </div>
+            <a href="manage-organizations.html" class="btn btn-sm btn-ghost">View All Organizations</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="eco-table">
+              <thead>
+                <tr>
+                  <th>Organization</th>
+                  <th>Primary Contact</th>
+                  <th>Tax ID / Registration</th>
+                  <th>Status</th>
+                  <th>Review Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminPendingQueueBody">
+                <!-- Injected via js/admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

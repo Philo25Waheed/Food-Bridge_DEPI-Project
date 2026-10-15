@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage My Listings — Food Bridge</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <div class="brand-icon-wrapper" style="width: 36px; height: 36px; font-size: 1.1rem;"><i class="bi bi-tree-fill"></i></div>
+          <div class="brand-title">
+            <span class="main-text fw-bold text-dark fs-5">Food Bridge</span>
+            <span class="sub-text" style="font-size: 0.65rem;">Donation Platform</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="sidebar-section-title">Navigation</div>
+        <ul class="sidebar-nav">
+          <li><a href="donor-dashboard.html" class="sidebar-link"><i class="bi bi-speedometer2"></i><span>Donor Hub</span></a></li>
+          <li><a href="charity-dashboard.html" class="sidebar-link"><i class="bi bi-heart-pulse"></i><span>Charity Hub</span></a></li>
+          <li><a href="explore-donations.html" class="sidebar-link"><i class="bi bi-compass"></i><span>Explore Food</span></a></li>
+        </ul>
+
+        <div class="sidebar-section-title mt-3">Donor Tools</div>
+        <ul class="sidebar-nav">
+          <li><a href="create-donation.html" class="sidebar-link"><i class="bi bi-plus-circle"></i><span>Publish Donation</span></a></li>
+          <li><a href="manage-donations.html" class="sidebar-link active"><i class="bi bi-card-checklist"></i><span>My Listings</span></a></li>
+        </ul>
+
+        <div class="sidebar-section-title mt-3">Charity Tools</div>
+        <ul class="sidebar-nav">
+          <li><a href="my-requests.html" class="sidebar-link"><i class="bi bi-box2-heart"></i><span>My Requests</span></a></li>
+          <li><a href="donation-tracking.html" class="sidebar-link"><i class="bi bi-diagram-3"></i><span>Pickup Tracking</span></a></li>
+        </ul>
+
+        <div class="sidebar-section-title mt-3">Account</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="notifications.html" class="sidebar-link">
+              <i class="bi bi-bell"></i>
+              <span>Notifications</span>
+              <span class="badge bg-danger rounded-pill sidebar-badge unread-notif-count" style="display: none;">0</span>
+            </a>
+          </li>
+          <li><a href="profile.html" class="sidebar-link"><i class="bi bi-gear"></i><span>Settings & Profile</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="user-mini-card">
+            <div class="user-avatar-circle"><i class="bi bi-shop"></i></div>
+            <div>
+              <div class="user-meta-name">GreenBites Bistro</div>
+              <div class="user-meta-role">Donor Partner</div>
+            </div>
+          </div>
+          <a href="login.html" class="btn btn-sm btn-ghost p-1"><i class="bi bi-box-arrow-right fs-5 text-secondary"></i></a>
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" aria-label="Toggle sidebar"><i class="bi bi-list"></i></button>
+          <div>
+            <h4 class="mb-0 fw-bold">Manage Food Listings</h4>
+            <div class="text-secondary small">Review, edit, and track status transitions across all your published donations.</div>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <a href="create-donation.html" class="btn btn-primary-eco">
+            <i class="bi bi-plus-lg"></i> <span class="btn-text-hide">Publish Donation</span>
+          </a>
+        </div>
+      </header>
+
+      <div class="dashboard-body">
+        <!-- Filter Controls Bar -->
+        <div class="eco-card p-3 mb-4 bg-white">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-5">
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                <input type="text" id="manageDonationSearch" class="form-control border-start-0" placeholder="Search by title, address, or contents...">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <select id="manageCategoryFilter" class="form-select">
+                <option value="all">All Categories</option>
+                <option value="Produce">Produce</option>
+                <option value="Bakery">Bakery</option>
+                <option value="Prepared Meals">Prepared Meals</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Canned Goods">Canned Goods</option>
+                <option value="Frozen Food">Frozen Food</option>
+              </select>
+            </div>
+            <div class="col-md-3 text-md-end">
+              <a href="create-donation.html" class="btn btn-sm btn-outline-success w-100 w-md-auto">
+                <i class="bi bi-plus-circle me-1"></i> New Item
+              </a>
+            </div>
+          </div>
+
+          <!-- Status Nav Tabs -->
+          <ul class="nav nav-pills mt-3 pt-3 border-top" id="manageStatusTabs">
+            <li class="nav-item">
+              <a class="nav-link active py-1 px-3 small fw-bold" href="#" data-status="all">All Listings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-1 px-3 small fw-bold" href="#" data-status="available">Available</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-1 px-3 small fw-bold" href="#" data-status="reserved">Reserved</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-1 px-3 small fw-bold" href="#" data-status="completed">Completed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-1 px-3 small fw-bold" href="#" data-status="cancelled">Cancelled</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Donations Grid -->
+        <div class="row" id="manageDonationsContainer">
+          <!-- Populated by js/donor.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Donation Modal -->
+  <div class="modal fade" id="editDonationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="editDonationForm">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold">Edit Donation Listing</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="editDonationId">
+            <div class="mb-3">
+              <label for="editDonationTitle" class="form-label">Donation Title</label>
+              <input type="text" class="form-control" id="editDonationTitle" required>
+            </div>
+            <div class="mb-3">
+              <label for="editDonationQuantity" class="form-label">Quantity</label>
+              <input type="number" step="0.5" class="form-control" id="editDonationQuantity" required>
+            </div>
+            <div class="alert alert-info py-2 small mb-0">
+              <i class="bi bi-info-circle me-1"></i> Updating quantity automatically notifies subscribed recipient pantries.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary-eco">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/donor.js"></script>
+</body>
+</html>
