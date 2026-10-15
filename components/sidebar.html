@@ -1,0 +1,141 @@
+<!-- Food Bridge Dashboard Sidebar Component -->
+<aside class="app-sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+      <div class="brand-icon-wrapper" style="width: 36px; height: 36px; font-size: 1.1rem;">
+        <i class="bi bi-tree-fill"></i>
+      </div>
+      <div class="brand-title">
+        <span class="main-text fw-bold text-dark fs-5">Food Bridge</span>
+        <span class="sub-text" style="font-size: 0.65rem;">Donation Platform</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="sidebar-content">
+    <div class="sidebar-section-title">Navigation</div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="donor-dashboard.html" class="sidebar-link" data-page="donor-dashboard">
+          <i class="bi bi-speedometer2"></i>
+          <span>Donor Hub</span>
+        </a>
+      </li>
+      <li>
+        <a href="charity-dashboard.html" class="sidebar-link" data-page="charity-dashboard">
+          <i class="bi bi-heart-pulse"></i>
+          <span>Charity Hub</span>
+        </a>
+      </li>
+      <li>
+        <a href="explore-donations.html" class="sidebar-link" data-page="explore-donations">
+          <i class="bi bi-compass"></i>
+          <span>Explore Food</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-section-title mt-3">Donor Tools</div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="create-donation.html" class="sidebar-link" data-page="create-donation">
+          <i class="bi bi-plus-circle"></i>
+          <span>Publish Donation</span>
+        </a>
+      </li>
+      <li>
+        <a href="manage-donations.html" class="sidebar-link" data-page="manage-donations">
+          <i class="bi bi-card-checklist"></i>
+          <span>My Listings</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-section-title mt-3">Charity Tools</div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="my-requests.html" class="sidebar-link" data-page="my-requests">
+          <i class="bi bi-box2-heart"></i>
+          <span>My Requests</span>
+        </a>
+      </li>
+      <li>
+        <a href="donation-tracking.html" class="sidebar-link" data-page="donation-tracking">
+          <i class="bi bi-diagram-3"></i>
+          <span>Pickup Tracking</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-section-title mt-3">Administration</div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="admin-dashboard.html" class="sidebar-link" data-page="admin-dashboard">
+          <i class="bi bi-shield-lock"></i>
+          <span>Admin Center</span>
+        </a>
+      </li>
+      <li>
+        <a href="manage-users.html" class="sidebar-link" data-page="manage-users">
+          <i class="bi bi-people"></i>
+          <span>Manage Users</span>
+        </a>
+      </li>
+      <li>
+        <a href="manage-organizations.html" class="sidebar-link" data-page="manage-organizations">
+          <i class="bi bi-building-check"></i>
+          <span>Verify Charities</span>
+        </a>
+      </li>
+      <li>
+        <a href="manage-reports.html" class="sidebar-link" data-page="manage-reports">
+          <i class="bi bi-flag"></i>
+          <span>Reports & Disputes</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-section-title mt-3">Account</div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="notifications.html" class="sidebar-link" data-page="notifications">
+          <i class="bi bi-bell"></i>
+          <span>Notifications</span>
+          <span class="badge bg-danger rounded-pill sidebar-badge unread-notif-count" style="display: none;">0</span>
+        </a>
+      </li>
+      <li>
+        <a href="profile.html" class="sidebar-link" data-page="profile">
+          <i class="bi bi-gear"></i>
+          <span>Settings & Profile</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
+      <button class="btn btn-sm btn-ghost p-1 px-2 theme-toggle-btn" onclick="EcoTheme.toggle()" title="Toggle Dark/Light Mode">
+        <i class="bi bi-moon-stars-fill"></i> <span class="small">Dark</span>
+      </button>
+      <button class="btn btn-sm btn-ghost p-1 px-2 lang-toggle-btn" onclick="EcoLang.set(EcoLang.get() === 'ar' ? 'en' : 'ar')" title="Toggle Language">
+        <i class="bi bi-translate me-1"></i> <span class="small current-lang-text">عربي</span>
+      </button>
+    </div>
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="user-mini-card">
+        <div class="user-avatar-circle">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <div>
+          <div class="user-meta-name">Demo Session</div>
+          <div class="user-meta-role">Active User</div>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-sm btn-ghost p-1" title="Sign Out">
+        <i class="bi bi-box-arrow-right fs-5 text-secondary"></i>
+      </a>
+    </div>
+  </div>
+</aside>
+<div class="sidebar-backdrop"></div>

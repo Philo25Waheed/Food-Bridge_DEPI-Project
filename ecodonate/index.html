@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Bridge — Share More. Waste Less. Change Lives.</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg public-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon-wrapper">
+          <i class="bi bi-tree-fill"></i>
+        </div>
+        <div class="brand-title">
+          <span class="main-text">Food Bridge</span>
+          <span class="sub-text">Food Donation Platform</span>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#publicNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="publicNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="explore-donations.html">Find Food</a></li>
+          <li class="nav-item"><a class="nav-link" href="#impact">Our Impact</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 flex-wrap mt-2 mt-lg-0">
+          <button class="btn btn-sm btn-ghost p-2 theme-toggle-btn" onclick="EcoTheme.toggle()" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="btn btn-sm btn-ghost px-2 lang-toggle-btn" onclick="EcoLang.set(EcoLang.get() === 'ar' ? 'en' : 'ar')" title="Switch Language (English / العربية)" aria-label="Switch Language">
+            <i class="bi bi-translate me-1"></i> <span class="current-lang-text">العربية</span>
+          </button>
+          <a href="login.html" class="btn btn-ghost">Log In</a>
+          <a href="register.html" class="btn btn-primary-eco">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section py-5 py-lg-6">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background-color: var(--color-primary-light); color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
+            <i class="bi bi-recycle"></i> Surplus Food Redistribution Engine
+          </div>
+          <h1 class="hero-title display-4 fw-bolder mb-3" style="letter-spacing: -0.5px; line-height: 1.15;">
+            Share More. Waste Less. <span style="color: var(--color-primary);">Change Lives.</span>
+          </h1>
+          <p class="hero-sub text-secondary fs-5 mb-4" style="line-height: 1.6;">
+            Food Bridge connects restaurants, supermarkets, and local suppliers with verified charities to redistribute fresh, edible surplus before it expires.
+          </p>
+          <div class="hero-cta-group d-flex flex-wrap gap-3 mb-4">
+            <a href="create-donation.html" class="btn btn-primary-eco btn-lg px-4">
+              <i class="bi bi-box2-heart-fill"></i> Donate Now
+            </a>
+            <a href="explore-donations.html" class="btn btn-secondary-eco btn-lg px-4">
+              <i class="bi bi-compass"></i> Find Donations
+            </a>
+          </div>
+          <div class="d-flex align-items-center gap-3 pt-2">
+            <div class="d-flex -space-x-2">
+              <span class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center fw-bold" style="width:34px; height:34px; font-size:0.8rem; border:2px solid #fff;"><i class="bi bi-check2"></i></span>
+              <span class="rounded-circle bg-info text-white d-inline-flex align-items-center justify-content-center fw-bold ms-n2" style="width:34px; height:34px; font-size:0.8rem; border:2px solid #fff;"><i class="bi bi-shield-check"></i></span>
+              <span class="rounded-circle bg-warning text-dark d-inline-flex align-items-center justify-content-center fw-bold ms-n2" style="width:34px; height:34px; font-size:0.8rem; border:2px solid #fff;"><i class="bi bi-heart"></i></span>
+            </div>
+            <div class="small text-secondary">
+              <strong>120+ verified partners</strong> active across Metro areas
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="position-relative">
+            <div class="eco-card p-2 shadow-lg" style="transform: rotate(-1deg); border-radius: 24px;">
+              <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&auto=format&fit=crop&q=80" alt="Volunteers packing fresh food donations" class="img-fluid rounded-4" style="height: 420px; width: 100%; object-fit: cover;">
+            </div>
+            <!-- Floating Metric Badge -->
+            <div class="eco-card p-3 position-absolute bottom-0 start-0 m-3 shadow-lg d-flex align-items-center gap-3" style="border-radius: 16px; max-width: 260px;">
+              <div class="stat-icon primary" style="width:44px; height:44px; font-size:1.25rem;">
+                <i class="bi bi-lightning-charge-fill"></i>
+              </div>
+              <div>
+                <div class="fw-bold fs-6">Avg Pickup Time</div>
+                <div class="text-success fw-bold">Under 2.5 Hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section (Demo Metrics) -->
+  <section id="impact" class="py-5 bg-white border-top border-bottom">
+    <div class="container py-3">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill text-uppercase mb-2">Simulated Community Impact</span>
+        <h2 class="fw-bold">Quantifiable Change, One Meal at a Time</h2>
+        <p class="text-secondary">Real-time metrics demonstrating the power of connecting excess supply with local demand.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-6 col-lg-3">
+          <div class="eco-card text-center p-4 h-100">
+            <div class="stat-icon primary mx-auto mb-3">
+              <i class="bi bi-basket3-fill"></i>
+            </div>
+            <div class="stat-value">18,450 <span class="fs-5 text-secondary">kg</span></div>
+            <div class="stat-label">Surplus Food Rescued</div>
+            <div class="stat-trend up justify-content-center"><i class="bi bi-arrow-up-right"></i> +24% this month</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="eco-card text-center p-4 h-100">
+            <div class="stat-icon teal mx-auto mb-3">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <div class="stat-value">32,800</div>
+            <div class="stat-label">Meals Redistributed</div>
+            <div class="stat-trend up justify-content-center"><i class="bi bi-arrow-up-right"></i> 98% satisfaction</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="eco-card text-center p-4 h-100">
+            <div class="stat-icon success mx-auto mb-3">
+              <i class="bi bi-clouds-fill"></i>
+            </div>
+            <div class="stat-value">46.2 <span class="fs-5 text-secondary">tons</span></div>
+            <div class="stat-label">CO2 Equivalent Diverted</div>
+            <div class="stat-trend up justify-content-center"><i class="bi bi-check-circle"></i> Landfill prevention</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="eco-card text-center p-4 h-100">
+            <div class="stat-icon info mx-auto mb-3">
+              <i class="bi bi-building-check"></i>
+            </div>
+            <div class="stat-value">124</div>
+            <div class="stat-label">Verified Organizations</div>
+            <div class="stat-trend up justify-content-center"><i class="bi bi-shield-check"></i> 100% vetted</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-5 py-lg-6" style="background-color: var(--color-bg-light);">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill text-uppercase mb-2">Simple & Efficient Workflow</span>
+        <h2 class="fw-bold">How Food Bridge Works</h2>
+        <p class="text-secondary">Three straightforward steps that turn prospective waste into community nourishment.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="eco-card h-100 p-4 text-center">
+            <div class="mx-auto rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 68px; height: 68px; background: var(--color-primary-light); color: var(--color-primary); font-size: 1.8rem;">
+              <i class="bi bi-pencil-square"></i>
+            </div>
+            <h4 class="fw-bold mb-2">1. Share a Donation</h4>
+            <p class="text-secondary small">
+              Food businesses or individuals post surplus food with photos, quantity, pickup windows, and safe handling notes in under 2 minutes.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="eco-card h-100 p-4 text-center">
+            <div class="mx-auto rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 68px; height: 68px; background: var(--color-secondary-light); color: var(--color-secondary); font-size: 1.8rem;">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <h4 class="fw-bold mb-2">2. Connect with a Charity</h4>
+            <p class="text-secondary small">
+              Verified shelters and food banks get instant notifications, discover nearby items via the interactive map, and request required allocations.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="eco-card h-100 p-4 text-center">
+            <div class="mx-auto rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 68px; height: 68px; background: var(--color-success-bg); color: var(--color-success); font-size: 1.8rem;">
+              <i class="bi bi-check2-circle"></i>
+            </div>
+            <h4 class="fw-bold mb-2">3. Make an Impact</h4>
+            <p class="text-secondary small">
+              Coordinate easy contactless or scheduled pickup, verify collection with digital codes, and view transparent environmental metrics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Live Donations -->
+  <section class="py-5 py-lg-6 bg-white">
+    <div class="container py-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+        <div>
+          <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill text-uppercase mb-2">Live Availability</span>
+          <h2 class="fw-bold mb-1">Featured Available Donations</h2>
+          <p class="text-secondary mb-0">High-quality food items ready for immediate pickup by registered charities.</p>
+        </div>
+        <a href="explore-donations.html" class="btn btn-secondary-eco mt-3 mt-md-0">
+          Explore All on Map <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <div class="row" id="featuredLandingDonationsContainer">
+        <!-- Injected via JavaScript from EcoStore -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Dual Benefits Section (Donors vs Charities) -->
+  <section class="dual-benefits-section py-5 py-lg-6">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <h2 class="fw-bold">Designed for Every Partner</h2>
+        <p class="text-secondary">Whether you have food to give or people to feed, Food Bridge streamlines every step.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="eco-card p-4 p-md-5 h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="stat-icon primary"><i class="bi bi-shop"></i></div>
+              <h3 class="fw-bold mb-0">For Donors & Businesses</h3>
+            </div>
+            <p class="text-secondary">Reduce costly waste disposal, qualify for tax deductions, and elevate your corporate sustainability profile.</p>
+            <ul class="list-unstyled d-flex flex-column gap-3 my-4">
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                <span><strong>Instant Listing:</strong> Publish surplus items in seconds with automated expiry clocks.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                <span><strong>Strict Verification:</strong> Only approved 501(c)(3) charities can request your listings.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                <span><strong>Tax & ESG Reports:</strong> Download certified weight logs for environmental reporting.</span>
+              </li>
+            </ul>
+            <a href="create-donation.html" class="btn btn-primary-eco">Start Donating Today</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="eco-card p-4 p-md-5 h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="stat-icon teal"><i class="bi bi-heart-pulse-fill"></i></div>
+              <h3 class="fw-bold mb-0">For Charitable Organizations</h3>
+            </div>
+            <p class="text-secondary">Supply your pantries and kitchens with fresh produce, proteins, and pantry staples without cost.</p>
+            <ul class="list-unstyled d-flex flex-column gap-3 my-4">
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-check-circle-fill text-info fs-5"></i>
+                <span><strong>Interactive Map Discovery:</strong> Filter by distance radius, food group, and urgency.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-check-circle-fill text-info fs-5"></i>
+                <span><strong>Predictable Pickups:</strong> Coordinate logistics and receiving schedules seamlessly.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-check-circle-fill text-info fs-5"></i>
+                <span><strong>End-to-End Tracking:</strong> 5-stage milestone tracking from request to handoff.</span>
+              </li>
+            </ul>
+            <a href="register.html" class="btn btn-teal">Register Your Organization</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-5 py-lg-6 bg-white">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill text-uppercase mb-2">Community Voices</span>
+        <h2 class="fw-bold">What Our Partners Say</h2>
+        <p class="text-secondary">Stories from the front lines of local food rescue and distribution.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="eco-card p-4 h-100 d-flex flex-column">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-secondary fst-italic flex-grow-1">
+              "Instead of dumping 40 kg of pristine artisan bread each evening, Food Bridge enables Hope Food Pantry to collect it right at our closing bell. It's effortless and meaningful."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" class="rounded-circle" style="width: 44px; height: 44px; object-fit: cover;">
+              <div>
+                <div class="fw-bold">Chef Marco Rossi</div>
+                <div class="text-muted small">Artisan Metro Bakery</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="eco-card p-4 h-100 d-flex flex-column">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-secondary fst-italic flex-grow-1">
+              "The interactive discovery map has transformed our morning supply run. We immediately see which supermarkets have produce ready, eliminating hours of phone calls."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" class="rounded-circle" style="width: 44px; height: 44px; object-fit: cover;">
+              <div>
+                <div class="fw-bold">Elena Rostova</div>
+                <div class="text-muted small">Hope Community Food Pantry</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="eco-card p-4 h-100 d-flex flex-column">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-secondary fst-italic flex-grow-1">
+              "Being able to review digital verification documents and manage incoming requests in a unified dashboard has made safety compliance bulletproof."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" class="rounded-circle" style="width: 44px; height: 44px; object-fit: cover;">
+              <div>
+                <div class="fw-bold">Marcus Vance</div>
+                <div class="text-muted small">Care Haven Shelter</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="py-5 py-lg-6" style="background-color: var(--color-bg-light);">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill text-uppercase mb-2">Common Inquiries</span>
+        <h2 class="fw-bold">Frequently Asked Questions</h2>
+        <p class="text-secondary">Everything you need to know about food safety, pickup coordination, and eligibility.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  How is food safety maintained on Food Bridge?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary">
+                  Donors must adhere to standard HACCP food safety standards and specify required storage conditions (e.g., cold-chain between 2°C–4°C). Furthermore, food items must be within recognized safe consumption windows upon handoff.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Who is eligible to request food donations?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary">
+                  Only verified non-profit organizations, registered shelters, and accredited soup kitchens that complete our identity and tax-exempt verification check can claim food allocations.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Are there any fees to list or request food?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary">
+                  No. Food Bridge is completely free for donors and charitable recipients. Our mission is pure resource efficiency and humanitarian support.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 rounded-3 shadow-sm overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  How does pickup verification work?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary">
+                  When a request is approved, both parties receive a synchronized collection pass with unique confirmation verification codes to ensure accountable handoffs.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-5 text-white" style="background: linear-gradient(135deg, #1A4731 0%, #228B55 100%);">
+    <div class="container text-center py-5">
+      <h2 class="display-5 fw-bold mb-3">Ready to Make an Environmental & Social Impact?</h2>
+      <p class="fs-5 text-white-50 mb-4 max-w-700 mx-auto">
+        Join hundreds of businesses and community organizations who are ensuring no good meal goes to waste.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="register.html" class="btn btn-light btn-lg px-4 text-success fw-bold">
+          Get Started Now
+        </a>
+        <a href="explore-donations.html" class="btn btn-outline-light btn-lg px-4">
+          Browse Live Listings
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Public Footer Component -->
+  <footer class="public-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <div class="brand-icon-wrapper" style="width: 36px; height: 36px; font-size: 1.1rem;">
+              <i class="bi bi-tree-fill"></i>
+            </div>
+            <span>Food Bridge</span>
+          </div>
+          <p class="text-secondary small mb-4" style="max-width: 320px;">
+            Connecting food businesses, supermarkets, and local communities to eliminate edible food waste and nourish people in need.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-pill" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-pill" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-pill" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-pill" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Platform</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Our Mission</a></li>
+            <li><a href="explore-donations.html">Browse Food</a></li>
+            <li><a href="register.html">Join Network</a></li>
+            <li><a href="login.html">Sign In</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Workflows</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="donor-dashboard.html">Donor Hub</a></li>
+            <li><a href="create-donation.html">List Donation</a></li>
+            <li><a href="charity-dashboard.html">Charity Hub</a></li>
+            <li><a href="my-requests.html">Track Requests</a></li>
+            <li><a href="admin-dashboard.html">Admin Ops</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h6 class="text-white fw-bold mb-3">Community Newsletter</h6>
+          <p class="text-secondary small">Get weekly impact stories and notifications on local food rescue drives.</p>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email">
+            <button class="btn btn-primary-eco" type="button" onclick="EcoToast.show('Subscribed to eco newsletter!', 'success')">
+              Subscribe
+            </button>
+          </div>
+          <div class="text-muted small mt-2" style="font-size: 0.75rem;">
+            <i class="bi bi-shield-check me-1"></i> No spam. Unsubscribe anytime.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <div>
+          &copy; 2026 Food Bridge Platform. All rights reserved.
+        </div>
+        <div class="d-flex gap-3">
+          <a href="about.html">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="about.html">Terms of Service</a>
+          <span>&bull;</span>
+          <a href="about.html">Food Safety Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/donations.js"></script>
+  <script>
+    // Populate top 3 featured live donations on landing page
+    function renderFeatured() {
+      const featuredContainer = document.getElementById('featuredLandingDonationsContainer');
+      if (featuredContainer && typeof EcoStore !== 'undefined') {
+        const donations = EcoStore.getDonations().filter(d => d.status === 'available').slice(0, 3);
+        featuredContainer.innerHTML = donations.map(d => createDonationCardHTML(d)).join('');
+      }
+    }
+    document.addEventListener('DOMContentLoaded', renderFeatured);
+    window.addEventListener('langChanged', renderFeatured);
+  </script>
+</body>
+</html>

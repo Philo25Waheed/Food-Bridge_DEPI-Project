@@ -1,0 +1,43 @@
+<!-- Food Bridge Public Navbar Component -->
+<nav class="navbar navbar-expand-lg public-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon-wrapper">
+        <i class="bi bi-tree-fill"></i>
+      </div>
+      <div class="brand-title">
+        <span class="main-text">Food Bridge</span>
+        <span class="sub-text">Donation Platform</span>
+      </div>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#publicNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="publicNav">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#how-it-works">How It Works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="explore-donations.html">Find Food</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center gap-2 flex-wrap mt-2 mt-lg-0">
+        <button class="btn btn-sm btn-ghost p-2 theme-toggle-btn" onclick="EcoTheme.toggle()" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button class="btn btn-sm btn-ghost px-2 lang-toggle-btn" onclick="EcoLang.set(EcoLang.get() === 'ar' ? 'en' : 'ar')" title="Switch Language" aria-label="Switch Language">
+          <i class="bi bi-translate me-1"></i> <span class="current-lang-text">العربية</span>
+        </button>
+        <a href="login.html" class="btn btn-ghost">Log In</a>
+        <a href="register.html" class="btn btn-primary-eco">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
