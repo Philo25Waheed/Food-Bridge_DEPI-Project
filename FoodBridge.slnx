@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FoodBridge.Application/FoodBridge.Application.csproj" />
+    <Project Path="src/FoodBridge.Domain/FoodBridge.Domain.csproj" />
+    <Project Path="src/FoodBridge.Infrastructure/FoodBridge.Infrastructure.csproj" />
+    <Project Path="src/FoodBridge.Web/FoodBridge.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FoodBridge.Tests/FoodBridge.Tests.csproj" />
+  </Folder>
+</Solution>

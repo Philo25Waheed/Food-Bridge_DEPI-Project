@@ -1,0 +1,49 @@
+## Visual Studio & .NET Core
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+*.suo
+*.userprefs
+*.dbmdl
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Rider & VS Code
+.idea/
+.vscode/
+*.swp
+*~
+
+## OS generated
+.DS_Store
+Thumbs.db
+
+## Cloudflare & Temporary Logs
+cloudflared.exe
+config.yml
+*.log
+web_err.log
+web_out.log

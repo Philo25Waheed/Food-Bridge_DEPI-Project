@@ -1,0 +1,230 @@
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -25px) scale(1.08) rotate(5deg);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.95) rotate(-5deg);
+    }
+}
+
+@keyframes floatReverse {
+    0%, 100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    33% {
+        transform: translate(-30px, 25px) scale(1.06) rotate(-6deg);
+    }
+    66% {
+        transform: translate(25px, -15px) scale(0.96) rotate(4deg);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.15);
+    }
+}
+
+.floating-orb-1 {
+    animation: floatSlow 14s ease-in-out infinite;
+}
+.floating-orb-2 {
+    animation: floatReverse 18s ease-in-out infinite;
+}
+.floating-orb-3 {
+    animation: pulseGlow 10s ease-in-out infinite;
+}
+
+@keyframes fadeInUpView {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-section {
+    animation: fadeInUpView 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalPopIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.93) translateY(14px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-card-animated {
+    animation: modalPopIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes btnShimmer {
+    0% {
+        transform: translateX(-150%) skewX(-25deg);
+    }
+    100% {
+        transform: translateX(250%) skewX(-25deg);
+    }
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.live-pulse-dot {
+    animation: pulseRing 2s infinite;
+}
+
+@keyframes toastIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes toastOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+}
+
+.toast-animate-in {
+    animation: toastIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-animate-out {
+    animation: toastOut 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.25); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.18); }
+    70% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes truckGlide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+html[dir="rtl"] .truck-glide-hover:hover {
+    transform: translateX(-10px) !important;
+}
+
+.truck-glide-hover:hover {
+    animation: truckGlide 1s ease-in-out infinite;
+}
+
+@keyframes badgeHalo {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+}
+
+.animate-halo {
+    animation: badgeHalo 2.2s infinite;
+}
+
+/* Scroll Reveal Base */
+.scroll-reveal,
+.scroll-reveal-left,
+.scroll-reveal-right,
+.scroll-reveal-scale {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.scroll-hidden.scroll-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+.scroll-hidden.scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-35px);
+}
+
+.scroll-hidden.scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(35px);
+}
+
+.scroll-hidden.scroll-reveal-scale {
+    opacity: 0;
+    transform: scale(0.93) translateY(20px);
+}
+
+.scroll-hidden.revealed {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+}
+
+/* RTL: flip scroll reveal direction */
+html[dir="rtl"] .scroll-hidden.scroll-reveal-left  { transform: translateX(35px); }
+html[dir="rtl"] .scroll-hidden.scroll-reveal-right { transform: translateX(-35px); }
+
+/* Cards: make opacity fade together with transform */
+.card-tilt-hover.scroll-reveal-scale,
+.interactive-card.scroll-reveal-scale {
+    transition: opacity .75s cubic-bezier(0.16, 1, 0.3, 1),
+                transform .35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow .35s ease, border-color .35s ease;
+}
+
+/* Restore hover lift after reveal (.revealed uses !important on transform) */
+.scroll-hidden.revealed.interactive-card:hover { transform: translateY(-5px) !important; }
+.scroll-hidden.revealed.card-tilt-hover:hover  { transform: translateY(-8px) scale(1.02) !important; }
+.interactive-card:hover, .card-tilt-hover:hover { transition-delay: 0ms !important; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-hidden { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .floating-orb-1, .floating-orb-2, .floating-orb-3,
+    .animate-bounce-subtle, .animate-float-slow, .animate-float-delayed { animation: none !important; }
+}
